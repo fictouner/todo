@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>My todo App</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/jquery.datetimepicker.min.css">
+    <link rel="stylesheet" href="css/base.css">
+
+</head>
+<body>
+<div class="msg">
+    <div class="msg-content">通知的内容</div>
+    <div class="msg-btn">知道了</div>
+
+</div>
+
+
+<div class="container">  <!-- 总容其开始 -->
+
+    <h1>我的Todo</h1>
+    <h6>推荐Chrome浏览器</h6>
+    <h6>Firefox浏览器要在F12/工具箱选项/勾上存储</h6>
+
+    <div class="add-task">
+        <input name="content"
+               type="text"
+               placeholder="e.g.下午去买菜"
+               autofocus
+               autocomplete="off"
+        >
+        <button type="submit">添加</button>
+    </div>
+    <div class="task-list"> <!-- 清单列表开始 -->
+
+    </div> <!-- 清单列表结束 -->
+    <div class="task_detail-mask"></div>
+    <div class="task-detail"> <!-- 任务详情开始 -->
+
+    </div>
+</div>
+    <!-- 总容器结束 -->
+<audio id="msg-audio" src="msg.mp3"  loop="" ></audio>
+<script  src="js/jquery-1.11.3.min.js"></script>
+<script src="js/jquery.datetimepicker.full.min.js"></script>
+<script src="js/store.min.js"></script>
+<script  src="js/base.js"></script>
+</body>
+</html>

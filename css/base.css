@@ -1,0 +1,244 @@
+* {
+    /*定义一个盒子，让它的算法是用上border */
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+    /*动画
+    prop
+    要变化的哪个属性
+    */
+    -webkit-transition: background 0.2s;
+    -moz-transition: background 0.2s;
+    -ms-transition: background 0.2s;
+    -o-transition: background 0.2s;
+    transition: background 0.2s;
+
+    outline:0; /*去掉input蓝边*/
+}
+
+body {
+    background:#00484b;
+    color: #fff;
+}
+.container {
+    max-width:700px;    /*---max-width: 灵活的，内容是随着浏览器变化的----*/
+    margin: 0 auto;
+    position: relative; /*相对定位*/
+    padding: 10px 10px;
+}
+h1 {
+    text-align: center;
+}
+
+.task-list {
+    margin: 10px 0;
+}
+
+input,
+.task-item,
+button,
+.task_detail-mask{
+    border-radius: 3px;
+    padding: 10px;
+
+}
+
+input[type=text],
+input[type=date],
+textarea{
+    border: 0;
+    display: block;
+    width:100%;
+    background: #ddd;
+    /*内阴影*/
+    -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,.3); /*0 1px 2px rgba   横向偏移 纵向偏移 阴影扩散半径*/
+    -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,.3);
+    box-shadow: inset 0 1px 2px rgba(0,0,0,.3);
+}
+input[type=text]:hover,
+input[type=text]:focus, 
+input[type=date]:hover,
+input[type=date]:focus,
+textarea:hover,
+textarea:focus{
+    background: #fff;
+    -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,.2);
+    -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,.2);
+    box-shadow: inset 0 1px 2px rgba(0,0,0,.2);
+}
+button {
+    display: inline-block;  /*行内块显示*/
+    border:0;
+    color: #333;
+    cursor: pointer;
+}
+
+.add-task input[type=text]{
+    float: left;
+    width: 84%;
+    margin-right:1%;
+}
+
+.add-task button[type=submit]{
+    background: #199fa5;
+    width:15%;
+
+}
+.add-task button[type=submit],.task-item{
+        /*
+    质感
+    inset 不要
+    hoff : 水平
+    voff ： 垂直
+     */
+    -webkit-box-shadow:  0 2px 3px rgba(0,0,0,.4);
+    -moz-box-shadow:  0 2px 3px rgba(0,0,0,.4);
+    box-shadow:  0 2px 3px rgba(0,0,0,.4);
+}
+
+
+.add-task button[type=submit]:hover {
+    background: #19ffff;
+}
+
+.task-item {
+    background: #fff;
+    color: #333;
+    margin-bottom:3px;
+    cursor: pointer;
+}
+.task-item.is-done {
+    color: #aaa;
+    background: rgba(255, 255, 255, .8);
+}
+
+.task-item.is-done:after {
+    content: "";
+    height: 1px;
+    background: #aaa;
+    width:100%;
+    display: block;
+    position: relative;
+    top: -9px;
+}
+.task-item:hover {
+    background: #ddd;
+}
+
+.task-detail {
+    position: absolute;
+    top:40px;
+    bottom: 0;
+    right: 0;
+    background: #fff;
+    color: #333;
+    width: 50%;
+    height: 330px;
+    border-radius: 3px 0 0 3px;
+    padding: 10px;
+    display: none;
+
+}
+.task-detail .content {
+    padding: 10px;
+    font-weight:900; /*变粗*/
+    cursor: pointer;
+
+}
+
+textarea {
+    color: #333;
+    min-height:150px;
+    border-radius: 3px;
+
+}
+
+.remind  button[type=submit] {
+    background: #199fa5;
+}
+.remind button[type=submit]:hover {
+    background: #19ffff;
+}
+
+
+.task-detail,
+.input-item{
+    margin-bottom: 10px;
+}
+.task_detail-mask {
+    position: fixed;
+    top:0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(30,30,30,.6);
+    border-radius: 3px;
+    display: none;
+
+}
+
+.task-content {
+    margin-left:10px;
+}
+.action {
+    float: right;
+}
+.action-delete,
+.action-detail {
+    color: #888;
+
+}
+.action-delete:hover,
+.action-detail:hover{
+    color: #000fff;
+}
+.msg {
+    display: none;
+    background: rgba(167,177,5,1);
+    text-align: center;
+    color: #a00c0c;
+    position: fixed;
+    min-height:100px;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index:1;
+}
+.msg-btn {
+    position: relative;
+    color: rgba(255,255,255,1);
+    text-decoration: none;
+    background-color: rgba(219,87,5,1);
+    font-family: '微软雅黑';
+    font-weight: 500;
+    font-size: 2em;
+    padding: 4px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    -webkit-box-shadow: 0px 9px 0px rgba(219,31,5,1), 0px 9px 25px rgba(0,0,0,.7);
+    -moz-box-shadow: 0px 9px 0px rgba(219,31,5,1), 0px 9px 25px rgba(0,0,0,.7);
+    box-shadow: 0px 9px 0px rgba(219,31,5,1), 0px 9px 25px rgba(0,0,0,.7);
+    margin-top: 10px;
+    margin-left: 70% ;
+    width: 110px;
+    text-align: center;
+    cursor: pointer;
+
+    -webkit-transition: all .1s ease;
+    -moz-transition: all .1s ease;
+    -ms-transition: all .1s ease;
+    -o-transition: all .1s ease;
+    transition: all .1s ease;
+}
+.msg-btn:active {
+    -webkit-box-shadow: 0px 3px 0px rgba(219,31,5,1), 0px 3px 6px rgba(0,0,0,.9);
+    -moz-box-shadow: 0px 3px 0px rgba(219,31,5,1), 0px 3px 6px rgba(0,0,0,.9);
+    box-shadow: 0px 3px 0px rgba(219,31,5,1), 0px 3px 6px rgba(0,0,0,.9);
+    position: relative;
+    top: 6px;
+}
+
+
+
